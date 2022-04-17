@@ -1,9 +1,11 @@
 const mysql = require('mysql')
+require('dotenv').config()
+
 var connection = mysql.createConnection({
     host:'localhost',
     user: 'root',
-    password: '',
-    database: ''
+    password: process.env.SQL_KEY,
+    database: 'todo_list'
 
 })
 
