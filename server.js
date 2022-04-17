@@ -7,11 +7,14 @@ const path = require('path')
 const dbConn = require('./db/db.js')
 
 
-//paths
-app.use(express.static(path.join(__filename, 'public')))
 
-app.get('/', (req , res) =>{
-    res.sendFile('index.html')
+//paths
+app.use(express.urlencoded({extended: false}))
+app.use(express.json())
+app.use(express.static(path.join(__dirname, 'public')))
+
+app.get('/', (req,res) =>{
+    res.sendFile(path.join(__dirname, './public/index'))
 })
 
 app.listen(PORT, () =>{
