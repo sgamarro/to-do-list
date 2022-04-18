@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://kit.fontawesome.com/5bec2359f8.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+
+    <div class="Container">
+        <h1>To Do List</h1>
+     <table>
+        <thead>
+            <tr>
+                <th><i class="fa-solid fa-square-check"></i></th>
+                <th> To Do</th>
+            </tr>
+        </thead>
+        <tbody>
+           <% for(var i=0; i< data.length; i++) { %> 
+            <tr>
+                <td><input type="checkbox"></tr>
+                <td><%= data[i].chores %></td>
+                
+            </tr>
+
+            <% } %>
+        </tbody>
+
+     </table>
+    </div>
+    </div>
+</body>
+
+</html>
