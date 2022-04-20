@@ -47,6 +47,25 @@ router.post('/add', (req,res) =>{
 }
 
 })
+router.get('/delete/(:id)', function(req, res, next) {
+
+    let id = req.params.id;
+
+    dbConn.query('DELETE FROM to_do WHERE id = ' + id, function(err, result) {
+        //if(err) throw err
+        if (err) {
+            // set flash message
+            req.flash('error', err)
+            // redirect to books page
+            res.redirect('/')
+        } else {
+            // set flash message
+            req.flash('success', 'Book successfully deleted! ID = ' + id)
+            // redirect to books page
+            res.redirect('/')
+        }
+    })
+})
 
 
 module.exports = router;
