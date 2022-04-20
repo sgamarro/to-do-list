@@ -32,7 +32,7 @@
             <tr>
                 <td><input type="checkbox"></tr>
                 <td><%= data[i].chores %></td>
-                <td><a href="#"  class="fa-solid fa-circle-xmark"></a></td>
+                <td><a href="/delete/<%=data[i].id%>" onClick="alert('are you sure')" >X</a></td>
             </tr>
 
             <% } %>
