@@ -2,6 +2,9 @@ const express = require("express");
 const router = express.Router();
 const dbConn = require('../db/db')
 
+
+
+
 router.get('/', function (req, res) {
     
         dbConn.query('SELECT * FROM to_do ORDER BY id', (err,rows) =>{
